@@ -129,7 +129,9 @@ const UserRegister = () => {
             "width": "40px", "height": "40px",
             "borderRadius": "50px"
           }} src={logo} alt="logo" />
+          <Link to={'/'}>
           <button className='login-button'>Login</button>
+          </Link>
         </nav>
         <div className='left-section'>
           <h1>Bringing You the Latest Trends and Timeless Classics</h1>
