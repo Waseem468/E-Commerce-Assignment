@@ -16,7 +16,9 @@ const LandingPage = () => {
             </nav>
             <div className='left-section'>
                 <h1>Bringing You the Latest Trends and Timeless Classics</h1>
+                <Link to={'/userRegister'}>
                 <button className='userRegister'>User Register</button>
+                </Link>
 
             </div>
             <div className='right-section'>

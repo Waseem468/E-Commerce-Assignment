@@ -41,7 +41,9 @@ nav {
 }
 
 .right-section {
-
+display: flex;
+place-content: center;
+align-items: center;
     grid-column-start: 2;
     grid-column-end: 3;
 }
