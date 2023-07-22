@@ -1,0 +1,65 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.Landing-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.2fr 1.8fr;
+}
+
+.Landing-container {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    display: grid;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(11, 36, 43);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 10px;
+    color: white;
+}
+
+
+.left-section {
+    padding: 40px;
+    margin-top: 20%;
+    text-align: left;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    color: white;
+}
+
+.right-section {
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.login-button {
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 5px;
+
+}
+
+.userRegister {
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 40px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
