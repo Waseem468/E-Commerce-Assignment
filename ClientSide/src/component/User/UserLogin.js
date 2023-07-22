@@ -75,11 +75,9 @@ const UserLogin = () => {
 
         <div className="admin-login-page">
           <div className="user-forget-password"><a href=".">Forget password?</a></div>
-          {/* <Link to={'/orderpage'}> */}
           <button type="submit" className="user-login-page-btn">
             Sign in
           </button>
-          {/* </Link> */}
         </div>
         <Link to={'/userRegister'}>
           <div class="user-link-create-account">Create Account</div>
