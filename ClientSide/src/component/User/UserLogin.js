@@ -9,7 +9,8 @@ const UserLogin = () => {
   const Navigater = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
+  const [loder, setLoder] = useState(false);
 
   const PostData = async (e) => {
     e.preventDefault();
@@ -53,6 +54,29 @@ const UserLogin = () => {
       }
 
     }
+    setLoder(true)
+
+    fetch("http://localhost:5000/user/login", {
+
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({ email, password })
+    }).then(res => res.json()).then(res => {
+      if (res.status === "Successfully login") {
+        toast.success("Hello User WelCome Choose Your Dream Car")
+
+        localStorage.setItem("User-token", JSON.stringify(res.token));
+        localStorage.setItem("User-Id", JSON.stringify(res.userId))
+        // window.alert("Hello User WelCome Choose Your Dream Car")
+        Navigater("/product")
+      } else if (res.status === "fail") {
+        setLoder(false)
+        toast.error("Please Enter Correct Details")
+        setError("User Details Not Match")
+      }
+    })
   };
   return (
     <div className="user-login-form" id="form">
