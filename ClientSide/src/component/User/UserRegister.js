@@ -74,6 +74,7 @@ const UserRegister = () => {
       return ''
     }
   }
+
   let name, value
   function handleInputs(e) {
     name = e.target.name;
@@ -89,37 +90,37 @@ const UserRegister = () => {
       setErrorText(errorMessage)
       console.log('Validation failed! can not submit form.')
     }
-    // else {
-    //     setLoder(true)
-    //     const res = await fetch('https://car-rental-app-1-5tgr.onrender.com/user/register', {
-    //         method: 'POST',
-    //         headers: {
-    //             "content-type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             name, email, contact, password, confirmPassword
-    //         })
-    //     });
-    //     const data = await res.json();
-    //     if (data.status === 'Failed') {
-    //         toast.error("User Allready Exists")
-    //         console.log("user already exist")
-    //     }
-    //     else if(data.status==='success') {
-    //         toast.success("Registration Successfull");
-    //         console.log("Registration Successfull");
-    //         window.alert("Registration Successfull")
-    //         setErrorText("")
-    //         setFormData({
-    //             name: "",
-    //             email: "",
-    //             contact: "",
-    //             password: "",
-    //             confirmPassword: ""
-    //         })
-    //         navigate('/')
-    //     }
-    // }
+    else {
+        setLoder(true)
+        const res = await fetch('http://localhost:5000/user/register', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({
+                name, email, contact, password, confirmPassword
+            })
+        });
+        const data = await res.json();
+        if (data.status === 'Failed') {
+            toast.error("User Allready Exists")
+            console.log("user already exist")
+        }
+        else if(data.status==='success') {
+            toast.success("Registration Successfull");
+            console.log("Registration Successfull");
+            window.alert("Registration Successfull")
+            setErrorText("")
+            setFormData({
+                name: "",
+                email: "",
+                contact: "",
+                password: "",
+                confirmPassword: ""
+            })
+            navigate('/')
+        }
+    }
   }
   return (
     <>
@@ -130,7 +131,7 @@ const UserRegister = () => {
             "borderRadius": "50px"
           }} src={logo} alt="logo" />
           <Link to={'/'}>
-          <button className='login-button'>Login</button>
+            <button className='login-button'>Login</button>
           </Link>
         </nav>
         <div className='left-section'>
