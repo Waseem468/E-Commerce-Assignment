@@ -33,7 +33,7 @@ const Products = ({ items }) => {
         <NavBar />
       </div>
       <div style={{ marginLeft: '20px' }}>
-      <SearchBar />
+        <SearchBar />
       </div>
       <MDBRow
         style={{
@@ -57,12 +57,12 @@ const Products = ({ items }) => {
             }}
           >
             <MDBRipple rippleColor='dark' rippleTag={'div'} className='bg-image hover-zoom'>
-              <Link to={`/product/${x?.id}`}>
-                <img width={200} style={{ padding: '20px' }} src={x?.asset} alt='asset' />
+              <Link to={`/product/${x?._id}`}>
+                <img width={200} style={{ padding: '20px',width:"100%" }} src={x?.asset} alt='asset' />
               </Link>
             </MDBRipple>
             <div className='card-body me-auto'>
-              <Link to={`/product/${x?.id}`}>
+              <Link to={`/product/${x?._id}`}>
                 <p className='card-title text-dark'>{truncate(x?.itemName, 25)}</p>
                 <strong className='text-dark'>{currDesign.format(x?.itemPrice)}</strong>
               </Link>
